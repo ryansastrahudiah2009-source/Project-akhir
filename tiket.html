@@ -53,7 +53,7 @@
   <a href="tiket.html" class="header-cta btn btn-warning" style="margin:8px 0 0;padding:14px;text-align:center;border-radius:6px;font-size:13px;display:block;">Beli Tiket Online →</a>
 </nav>
 
-<!-- ── Form ── -->
+
 <div class="form-hero">
   <div class="form-card">
 
@@ -112,7 +112,7 @@
       </p>
     </form>
 
-    <!-- Success state -->
+ 
     <div class="form-success" id="formSuccess">
       <div class="form-success-icon">✅</div>
       <div class="form-success-title">Pemesanan Terkirim!</div>
@@ -133,14 +133,14 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="script.js"></script>
 <script>
-  // Set min date to today
+
   const dateInput = document.getElementById('f-tanggal');
   if (dateInput) {
     const today = new Date().toISOString().split('T')[0];
     dateInput.setAttribute('min', today);
   }
 
-  // Handle form submit
+
   const orderForm    = document.getElementById('orderForm');
   const formSuccess  = document.getElementById('formSuccess');
   const formError    = document.getElementById('form-error');
@@ -151,13 +151,13 @@
 
     const d = Object.fromEntries(new FormData(orderForm));
 
-    // Basic validation
+ 
     if (!d.nama || !d.email || !d.jenis_tiket || !d.jumlah || !d.tanggal) {
       formError.style.display = 'block';
       return;
     }
 
-    // Format tanggal jadi readable
+
     const tgl = new Date(d.tanggal).toLocaleDateString('id-ID', {
       weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
     });
@@ -178,7 +178,7 @@
       `?subject=${encodeURIComponent(subject)}` +
       `&body=${encodeURIComponent(body)}`;
 
-    // Tampilkan success setelah jeda singkat
+   
     setTimeout(() => {
       orderForm.style.display = 'none';
       formSuccess.style.display = 'block';
