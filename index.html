@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TMII — Taman Mini Indonesia Indah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg-scene">
+  <div class="bg-image"></div>
+  <div class="bg-overlay"></div>
+  <div class="bg-fade"></div>
+  <div class="bg-pattern"></div>
+</div>
+
+<header>
+  <div class="logo-area">
+    <div class="logo-emblem" id="logoEmblem" title="Klik untuk ganti logo">
+      <img id="logoImg" src="" alt="Logo TMII">
+      <div id="logoPlaceholder">＋</div>
+      <input type="file" id="logoUpload" accept="image/*" style="display:none">
+    </div>
+    <div class="logo-text">
+      <span class="main">TMII</span>
+      <span class="sub">Taman Mini Indonesia Indah</span>
+    </div>
+  </div>
+
+  <nav aria-label="Menu utama">
+    <button class="nav-btn btn" onclick="scrollSection('history')">History</button>
+    <button class="nav-btn btn" onclick="scrollSection('explore')">Explore</button>
+    <button class="nav-btn btn" onclick="scrollSection('tickets')">Tickets</button>
+    <button class="nav-btn btn" onclick="scrollSection('contact')">Contact</button>
+    <a href="tiket.html" class="header-cta btn btn-warning">Beli Tiket</a>
+  </nav>
+
+  <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<nav class="mobile-nav" id="mobileNav" aria-label="Menu mobile">
+  <button class="nav-btn btn" onclick="scrollSection('history')">📜 History</button>
+  <button class="nav-btn btn" onclick="scrollSection('explore')">🗺️ Explore</button>
+  <button class="nav-btn btn" onclick="scrollSection('tickets')">🎟️ Tickets</button>
+  <button class="nav-btn btn" onclick="scrollSection('contact')">📍 Contact</button>
+  <a href="tiket.html" class="header-cta btn btn-warning" style="margin:8px 0 0;padding:14px;text-align:center;border-radius:6px;font-size:13px;display:block;">Beli Tiket Online →</a>
+</nav>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-badge"><span>Sejak 1975 · Jakarta, Indonesia</span></div>
+
+  <h1 class="hero-title">
+    Taman Mini
+    <em>Indonesia Indah</em>
+  </h1>
+
+  <p class="hero-sub">Jelajahi keindahan 34 provinsi dalam satu destinasi bersejarah</p>
+
+  <div class="image-strip-wrap">
+    <div class="image-strip">
+      <div class="img-card" onclick="scrollSection('explore')">
+        <img src="Photos/AERIAL.jpg" alt="Aerial view TMII" loading="lazy">
+        <div class="img-label">Aerial View</div>
+      </div>
+      <div class="img-card" onclick="scrollSection('explore')">
+        <img src="Photos/gadang.jpg" alt="Rumah Gadang" loading="lazy">
+        <div class="img-label">Rumah Gadang</div>
+      </div>
+      <div class="img-card" onclick="scrollSection('explore')">
+        <img src="Photos/monumen.png" alt="Monumen TMII" loading="lazy">
+        <div class="img-label">Monumen</div>
+      </div>
+      <div class="img-card" onclick="scrollSection('explore')">
+        <img src="Photos/KEONG.jpg" alt="Teater Keong Mas" loading="lazy">
+        <div class="img-label">Keong Mas</div>
+      </div>
+      <div class="img-card" onclick="scrollSection('explore')">
+        <img src="Photos/danau.jpeg" alt="Danau Mini" loading="lazy">
+        <div class="img-label">Danau Mini</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row g-4 justify-content-center quick-nav">
+      <div class="col-6 col-sm-5 col-md-3">
+        <div class="qcard" onclick="scrollSection('history')" role="button" tabindex="0">
+          <span class="qcard-icon">📜</span>
+          <div class="qcard-title">History</div>
+          <div class="qcard-desc">Sejarah &amp; perjalanan TMII sejak didirikan</div>
+          <span class="qcard-arrow" aria-hidden="true">→</span>
+        </div>
+      </div>
+      <div class="col-6 col-sm-5 col-md-3">
+        <div class="qcard" onclick="scrollSection('explore')" role="button" tabindex="0">
+          <span class="qcard-icon">🗺️</span>
+          <div class="qcard-title">Explore</div>
+          <div class="qcard-desc">Wahana, paviliun &amp; atraksi unggulan</div>
+          <span class="qcard-arrow" aria-hidden="true">→</span>
+        </div>
+      </div>
+      <div class="col-6 col-sm-5 col-md-3">
+        <div class="qcard" onclick="scrollSection('tickets')" role="button" tabindex="0">
+          <span class="qcard-icon">🎟️</span>
+          <div class="qcard-title">Tickets</div>
+          <div class="qcard-desc">Harga masuk &amp; paket kunjungan spesial</div>
+          <span class="qcard-arrow" aria-hidden="true">→</span>
+        </div>
+      </div>
+      <div class="col-6 col-sm-5 col-md-3">
+        <div class="qcard" onclick="scrollSection('contact')" role="button" tabindex="0">
+          <span class="qcard-icon">📍</span>
+          <div class="qcard-title">Contact</div>
+          <div class="qcard-desc">Lokasi, jam buka &amp; info kontak</div>
+          <span class="qcard-arrow" aria-hidden="true">→</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ── History ── -->
+<section id="history" class="page-section">
+  <div class="section-container">
+    <div class="section-head">
+      <span class="section-tag">✦ Sejarah</span>
+      <h2 class="section-title">History</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <span class="t-year">1971</span>
+          <div class="t-dot"></div>
+          <div class="t-line"></div>
+        </div>
+        <div class="timeline-content">
+          <h3 class="t-title">Gagasan Ibu Tien Soeharto</h3>
+          <p class="t-desc">Ide pendirian taman mini yang menampilkan kebudayaan seluruh Indonesia dicetuskan oleh Siti Hartinah (Ibu Tien Soeharto) pada tahun 1971.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <span class="t-year">1972</span>
+          <div class="t-dot"></div>
+          <div class="t-line"></div>
+        </div>
+        <div class="timeline-content">
+          <h3 class="t-title">Pembangunan Dimulai</h3>
+          <p class="t-desc">Proses pembebasan lahan seluas 146 hektare di Jakarta Timur dimulai, menggantikan permukiman warga dengan kompensasi resmi.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <span class="t-year">1975</span>
+          <div class="t-dot"></div>
+          <div class="t-line"></div>
+        </div>
+        <div class="timeline-content">
+          <h3 class="t-title">Grand Opening</h3>
+          <p class="t-desc">TMII resmi dibuka pada 20 April 1975 oleh Presiden Soeharto. Dilengkapi 27 Anjungan Daerah pertama yang merepresentasikan provinsi Indonesia.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <span class="t-year">2021</span>
+          <div class="t-dot"></div>
+          <div class="t-line"></div>
+        </div>
+        <div class="timeline-content">
+          <h3 class="t-title">Revitalisasi TMII</h3>
+          <p class="t-desc">Pemerintah melalui Kemensetneg melakukan revitalisasi besar-besaran, mempercantik fasilitas dan wahana untuk menyambut generasi baru pengunjung.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <span class="t-year">2024</span>
+          <div class="t-dot"></div>
+          <div class="t-line"></div>
+        </div>
+        <div class="timeline-content">
+          <h3 class="t-title">TMII Masa Kini</h3>
+          <p class="t-desc">Dengan 34 anjungan provinsi, 16 museum, berbagai wahana dan danau buatan, TMII tetap menjadi ikon pariwisata dan budaya kebanggaan Indonesia.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Explore ── -->
+<section id="explore" class="page-section page-section--alt">
+  <div class="section-container">
+    <div class="section-head">
+      <span class="section-tag">✦ Destinasi</span>
+      <h2 class="section-title">Explore</h2>
+    </div>
+    <div class="explore-grid">
+
+      <div class="explore-card">
+        <img src="Photos/gadang.jpg" alt="Anjungan Daerah" loading="lazy">
+        <div class="card-info"><div class="card-name">Anjungan Daerah</div></div>
+      </div>
+      <div class="explore-card">
+        <img src="Photos/KEONG.jpg" alt="Teater Keong Mas" loading="lazy">
+        <div class="card-info"><div class="card-name">Teater Keong Mas</div></div>
+      </div>
+      <div class="explore-card">
+        <img src="Photos/danau.jpeg" alt="Danau Mini" loading="lazy">
+        <div class="card-info"><div class="card-name">Danau Mini</div></div>
+      </div>
+      <div class="explore-card">
+        <img src="Photos/monumen.png" alt="Museum dan Monumen" loading="lazy">
+        <div class="card-info"><div class="card-name">Museum &amp; Monumen</div></div>
+      </div>
+      <div class="explore-card">
+        <img src="Photos/gantunng.jpg" alt="Skyway dan Cable Car" loading="lazy">
+        <div class="card-info"><div class="card-name">Skyway &amp; Cable Car</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Tickets ── -->
+<section id="tickets" class="page-section">
+  <div class="section-container">
+    <div class="section-head">
+      <span class="section-tag">✦ Tiket Masuk</span>
+      <h2 class="section-title">Tickets</h2>
+    </div>
+    <div class="ticket-list">
+
+      <div class="ticket-card">
+        <div class="ticket-top">
+          <div class="ticket-name">Tiket Reguler</div>
+          <div class="ticket-price">Rp 25.000</div>
+        </div>
+        <div class="ticket-desc">Akses ke seluruh kawasan TMII, anjungan daerah, dan taman terbuka.</div>
+        <div class="ticket-perks">
+          <span class="perk">34 Anjungan</span>
+          <span class="perk">Taman Bebas</span>
+          <span class="perk">Parkir Gratis</span>
+        </div>
+      </div>
+
+      <div class="ticket-card">
+        <div class="ticket-top">
+          <div class="ticket-name">Tiket Keluarga</div>
+          <div class="ticket-price">Rp 85.000</div>
+        </div>
+        <div class="ticket-desc">Paket hemat untuk 2 dewasa + 2 anak. Bonus akses 1 wahana pilihan.</div>
+        <div class="ticket-perks">
+          <span class="perk">2 Dewasa + 2 Anak</span>
+          <span class="perk">1 Wahana Gratis</span>
+          <span class="perk">Diskon Restoran</span>
+        </div>
+      </div>
+
+      <div class="ticket-card">
+        <div class="ticket-top">
+          <div class="ticket-name">Tiket Premium</div>
+          <div class="ticket-price">Rp 150.000</div>
+        </div>
+        <div class="ticket-desc">Akses penuh termasuk Keong Mas, Skyway, dan Museum Pusaka.</div>
+        <div class="ticket-perks">
+          <span class="perk">All Access</span>
+          <span class="perk">Keong Mas</span>
+          <span class="perk">Skyway</span>
+          <span class="perk">Museum</span>
+        </div>
+      </div>
+
+    </div>
+    <a href="tiket.html" class="buy-btn btn btn-warning btn-lg w-100 mt-4">Beli Tiket Online →</a>
+  </div>
+</section>
+
+<!-- ── Contact ── -->
+<section id="contact" class="page-section page-section--alt">
+  <div class="section-container">
+    <div class="section-head">
+      <span class="section-tag">✦ Informasi</span>
+      <h2 class="section-title">Contact</h2>
+    </div>
+    <div class="contact-list">
+
+      <a class="contact-item" href="https://maps.google.com/?q=Taman+Mini+Indonesia+Indah" target="_blank" rel="noopener">
+        <div class="contact-icon">📍</div>
+        <div class="contact-info">
+          <div class="contact-label">Alamat</div>
+          <div class="contact-value">Jl. Raya Taman Mini, Cipayung, Jakarta Timur</div>
+        </div>
+      </a>
+
+      <a class="contact-item" href="#">
+        <div class="contact-icon">🕐</div>
+        <div class="contact-info">
+          <div class="contact-label">Jam Operasional</div>
+          <div class="contact-value">Selasa – Minggu, 08.00 – 17.00 WIB</div>
+        </div>
+      </a>
+
+      <a class="contact-item" href="tel:+62218779-0580">
+        <div class="contact-icon">📞</div>
+        <div class="contact-info">
+          <div class="contact-label">Telepon</div>
+          <div class="contact-value">(+64) 08119289288</div>
+        </div>
+      </a>
+
+      <a class="contact-item" href="mailto:info@tamanmini.com">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-info">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">info@tamanmini.com</div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="map-placeholder" onclick="window.open('https://maps.google.com/?q=Taman+Mini+Indonesia+Indah','_blank')" role="button" tabindex="0" aria-label="Buka peta Google Maps">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/TMII_Aerial_View.jpg/640px-TMII_Aerial_View.jpg" alt="Lokasi TMII" loading="lazy">
+      <span class="map-pin" aria-hidden="true">📍</span>
+    </div>
+  </div>
+</section>
+
+<div class="bottom-bar" aria-hidden="true"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
