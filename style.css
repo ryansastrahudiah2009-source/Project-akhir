@@ -15,7 +15,7 @@
   --bs-btn-border-color: #C9A84C;
 }
 
-/* ── Buttons ── */
+
 .btn-warning {
   background-color: var(--gold);
   border-color: var(--gold);
@@ -78,7 +78,7 @@
 .btn-group-vertical .btn-outline-warning:hover { border-color: var(--gold); }
 .btn-group-vertical .btn-outline-warning:disabled { color: rgba(201,168,76,0.3); border-color: rgba(201,168,76,0.2); cursor: not-allowed; }
 
-/* ── Base ── */
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -120,7 +120,7 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='40' cy='40' r='35' fill='none' stroke='%23C9A84C' stroke-width='1'/%3E%3Ccircle cx='40' cy='40' r='25' fill='none' stroke='%23C9A84C' stroke-width='0.5'/%3E%3Cpath d='M5 40h70M40 5v70M15 15l50 50M65 15l-50 50' stroke='%23C9A84C' stroke-width='0.3'/%3E%3C/svg%3E");
 }
 
-/* ── Header ── */
+
 header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -257,7 +257,7 @@ nav { display: flex; align-items: center; gap: 4px; }
 .mobile-nav .nav-btn { width: 100%; text-align: left; padding: 14px 16px; font-size: 14px; border-radius: 6px; border-bottom: 1px solid rgba(201,168,76,0.08); }
 .mobile-nav .header-cta { width: 100%; margin: 8px 0 0; padding: 14px; text-align: center; border-radius: 6px; font-size: 13px; }
 
-/* ── Hero ── */
+
 .hero {
   position: relative;
   z-index: 1;
@@ -372,7 +372,7 @@ nav { display: flex; align-items: center; gap: 4px; }
 .qcard-arrow { position: absolute; bottom: 12px; right: 14px; color: var(--gold); opacity: 0; transform: translateX(-4px); transition: opacity 0.3s, transform 0.3s; font-size: 14px; }
 .qcard:hover .qcard-arrow { opacity: 1; transform: translateX(0); }
 
-/* ── Panel ── */
+
 .panel-overlay { position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0); pointer-events: none; transition: background 0.4s; }
 .panel-overlay.open { background: rgba(0,0,0,0.6); pointer-events: all; backdrop-filter: blur(4px); }
 
@@ -431,7 +431,7 @@ nav { display: flex; align-items: center; gap: 4px; }
 .panel-body::-webkit-scrollbar { width: 4px; }
 .panel-body::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.3); border-radius: 2px; }
 
-/* ── Timeline ── */
+
 .timeline { display: flex; flex-direction: column; }
 
 .timeline-item {
@@ -468,7 +468,7 @@ nav { display: flex; align-items: center; gap: 4px; }
 .t-title { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--cream); margin-bottom: 6px; }
 .t-desc { font-size: 14px; color: rgba(245,237,216,0.55); font-style: italic; line-height: 1.6; }
 
-/* ── Explore Grid ── */
+
 .explore-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
 .explore-card {
@@ -494,7 +494,7 @@ nav { display: flex; align-items: center; gap: 4px; }
 .explore-card .card-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px 12px 10px; background: linear-gradient(transparent, rgba(0,0,0,0.75)); }
 .explore-card .card-name { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 1.5px; color: var(--cream); font-weight: 600; }
 
-/* ── Tickets ── */
+
 .ticket-list { display: flex; flex-direction: column; gap: 14px; }
 
 .ticket-card {
@@ -535,7 +535,7 @@ nav { display: flex; align-items: center; gap: 4px; }
 .buy-btn { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 2px; font-weight: 700; transition: background-color 0.3s, border-color 0.3s, transform 0.2s, box-shadow 0.3s; }
 .buy-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,168,76,0.4); }
 
-/* ── Contact ── */
+
 .contact-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
 
 .contact-item {
@@ -576,7 +576,7 @@ nav { display: flex; align-items: center; gap: 4px; }
 .contact-label { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; color: var(--gold); margin-bottom: 2px; }
 .contact-value { font-size: 14px; color: var(--cream); }
 
-/* ── Map & Bottom ── */
+
 .map-placeholder {
   border-radius: 10px;
   overflow: hidden;
@@ -601,13 +601,11 @@ nav { display: flex; align-items: center; gap: 4px; }
 .scroll-hint span { font-size: 10px; letter-spacing: 3px; color: var(--gold); font-family: 'Cinzel', serif; }
 .scroll-line { width: 1px; height: 36px; background: linear-gradient(var(--gold), transparent); animation: scrollPulse 2s infinite; }
 
-/* ── Keyframes ── */
 @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeUp   { from { opacity: 0; transform: translateY(20px);  } to { opacity: 1; transform: translateY(0); } }
 @keyframes bounce   { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 @keyframes scrollPulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
 
-/* ── Responsive ── */
 @media (max-width: 1024px) {
   :root { --panel-w: 420px; }
   header { padding: 0 32px; }
@@ -693,9 +691,6 @@ nav { display: flex; align-items: center; gap: 4px; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 
-/* ══════════════════════════════════════
-   PAGE SECTIONS (scroll content)
-══════════════════════════════════════ */
 .page-section {
   position: relative;
   z-index: 1;
@@ -732,7 +727,7 @@ nav { display: flex; align-items: center; gap: 4px; }
   color: var(--cream);
 }
 
-/* Tickets in section — 3 columns */
+
 .page-section .ticket-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -746,12 +741,12 @@ nav { display: flex; align-items: center; gap: 4px; }
 .page-section .ticket-card:nth-child(2) { transition-delay: 0.17s; }
 .page-section .ticket-card:nth-child(3) { transition-delay: 0.27s; }
 
-/* Explore in section — 3 columns */
+
 .page-section .explore-grid { grid-template-columns: repeat(3, 1fr); }
 .page-section .explore-card { height: 200px; }
 .page-section .explore-card:nth-child(5) { grid-column: span 1; height: 200px; }
 
-/* Timeline max-width */
+
 .page-section .timeline { max-width: 680px; margin: 0 auto; }
 
 @media (max-width: 768px) {
@@ -767,9 +762,7 @@ nav { display: flex; align-items: center; gap: 4px; }
   .page-section .explore-card:nth-child(5) { grid-column: span 1; }
 }
 
-/* ══════════════════════════════════════
-   TICKET ORDER FORM PAGE (tiket.html)
-══════════════════════════════════════ */
+
 .form-hero {
   position: relative;
   z-index: 1;
