@@ -1,32 +1,4 @@
-// ── Logo upload ──
-const logoEmblem      = document.getElementById('logoEmblem');
-const logoImg         = document.getElementById('logoImg');
-const logoUpload      = document.getElementById('logoUpload');
-const logoPlaceholder = document.getElementById('logoPlaceholder');
 
-if (logoEmblem && logoUpload) {
-  logoEmblem.addEventListener('click', () => logoUpload.click());
-  logoUpload.addEventListener('change', e => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = ev => {
-      logoImg.src = ev.target.result;
-      logoImg.classList.add('loaded');
-      logoPlaceholder.style.display = 'none';
-      localStorage.setItem('tmii_logo', ev.target.result);
-    };
-    reader.readAsDataURL(file);
-  });
-  const saved = localStorage.getItem('tmii_logo');
-  if (saved) {
-    logoImg.src = saved;
-    logoImg.classList.add('loaded');
-    logoPlaceholder.style.display = 'none';
-  }
-}
-
-// ── Scroll to section ──
 function scrollSection(id) {
   const el = document.getElementById(id);
   if (!el) return;
@@ -36,7 +8,7 @@ function scrollSection(id) {
   closeMobileMenu();
 }
 
-// ── Header scroll + scroll-spy ──
+
 window.addEventListener('scroll', () => {
   document.querySelector('header')?.classList.toggle('scrolled', window.scrollY > 20);
 
@@ -55,7 +27,6 @@ window.addEventListener('scroll', () => {
   });
 }, { passive: true });
 
-// ── Hamburger ──
 const hamburger = document.getElementById('hamburger');
 const mobileNav = document.getElementById('mobileNav');
 
@@ -75,7 +46,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeMobileMenu();
 });
 
-// ── Intersection observer (section animations) ──
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -89,7 +60,7 @@ document.querySelectorAll('.timeline-item, .explore-card, .ticket-card, .contact
   observer.observe(el);
 });
 
-// ── Image strip drag ──
+
 const stripWrap = document.querySelector('.image-strip-wrap');
 const strip     = document.querySelector('.image-strip');
 
@@ -130,7 +101,7 @@ if (strip && stripWrap) {
   }
 }
 
-// ── Scroll hint ──
+
 const scrollHint = document.querySelector('.scroll-hint');
 if (scrollHint) {
   window.addEventListener('scroll', () => {
@@ -139,7 +110,7 @@ if (scrollHint) {
   }, { passive: true, once: true });
 }
 
-// ── Parallax bg ──
+
 if (window.innerWidth >= 769 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const bgImage = document.querySelector('.bg-image');
   if (bgImage) {
